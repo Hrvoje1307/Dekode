@@ -1,0 +1,23 @@
+<navigation></navigation>
+<div class="container my-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Ime</th>
+        <th scope="col">Prezime</th>
+        <th scope="col">Datum rođenja</th>
+        <th scope="col">Pozicija</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td scope="row">{{employee.id}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{(employee.dateOfBirth)}}</td>
+        <td>{{employee.jobTitle}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
