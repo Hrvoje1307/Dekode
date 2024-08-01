@@ -8,6 +8,7 @@ const API_URL = "https://api.test.ulaznice.hr/paganini/api/job-interview/employe
 @Injectable({
   providedIn: 'root'
 })
+
 export class ServicesService {
 
   constructor(private http: HttpClient) { }

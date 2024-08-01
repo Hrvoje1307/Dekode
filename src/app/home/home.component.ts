@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.showEmployees());
+    this.showEmployees()
   }
 
   showEmployees() {
