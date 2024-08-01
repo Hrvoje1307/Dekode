@@ -1,2 +1,43 @@
 <navigation></navigation>
-<p>Forma radi</p>
+<div class="container my-5">
+  <h1>Unesite novog zaposlenika</h1>
+  <hr>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Ime zaposlenika</label>
+      <input type="text" placeholder="Ime" [(ngModel)]="employeeName" #name="ngModel" required name="name"
+        class="form-control" id="nameInput" aria-describedby="emailHelp">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+        Ime je obavezno.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="surnameInput" class="form-label">Prezime zaposlenika</label>
+      <input type="text" placeholder="Prezime" [(ngModel)]="employeeSurname" required #surname="ngModel" name="surname"
+        class="form-control" id="surnameInput" aria-describedby="emailHelp">
+      <div *ngIf="surname.invalid && (surname.dirty || surname.touched)" class="text-danger">
+        Prezime je obavezno.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="dateOfBirthInput" class="form-label">Datum rođenja zaposlenika</label>
+      <input type="text" placeholder="dd.MM.yyyy - HH:mm:ss" [(ngModel)]="employeeBirth" #birthDate="ngModel" required
+        name="dateOfBirth" class="form-control" id="dateOfBirthInput" aria-describedby="emailHelp">
+      <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)" class="text-danger">
+        Datum rođenja je obavezan.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="jobTitleInput" class="form-label">Pozicija zaposlenika</label>
+      <input type="text" placeholder="Pozicija" [(ngModel)]="employeeJob" #jobTitle="ngModel" required name="jobTitle"
+        class="form-control" id="jobTitleInput" aria-describedby="emailHelp">
+      <div *ngIf="jobTitle.invalid && (jobTitle.dirty || jobTitle.touched)" class="text-danger">
+        Pozicija je obavezna.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Nastavi</button>
+  </form>
+</div>
+
+<div #printEmployeeInfo class="container"></div>
